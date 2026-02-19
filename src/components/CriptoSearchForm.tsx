@@ -8,6 +8,8 @@ export default function CriptoSearchForm() {
 
     const cryptoCurrencies = useCryptoStore((state) => state.cryptoCurrencies);
 
+    const fetchPair = useCryptoStore((state) => state.fetchPair);
+
 
     const initialPair : PairCurrency = {
         currency: '',
@@ -35,6 +37,7 @@ export default function CriptoSearchForm() {
         };
 
         setAlert('');
+        fetchPair(pair);
     };
 
   return (
